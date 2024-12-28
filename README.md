@@ -35,7 +35,7 @@ tsc test.ts
 
 - When run this command, this process will convert Typescript code into Javascript code compatible with browser or Node.js. Result:
 
-* `test.ts` file:
+  + `test.ts` file:
 
 ```js
 const test = (name: string) => {
@@ -44,7 +44,7 @@ const test = (name: string) => {
 console.log(test("world"));
 ```
 
-- `test.js` file:
+  + `test.js` file:
 
 ```js
 var sum = function (number1, number2) {
