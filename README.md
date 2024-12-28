@@ -78,5 +78,9 @@ console.log(sum(1, 2));
 - Ví dụ, khi chạy file `test.js`:
 
 ```js
-3
+3;
 ```
+
+# Câu 2:
+
+Video demo: https://www.loom.com/share/401e35e90663495299c06539a100ce3a?sid=48d28b62-8e6b-414b-b67e-4809c498de51
