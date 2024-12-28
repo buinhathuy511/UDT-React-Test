@@ -35,16 +35,16 @@ tsc test.ts
 
 - When run this command, this process will convert Typescript code into Javascript code compatible with browser or Node.js. Result:
 
-* `test.ts` file:
+`test.ts` file:
 
 ```js
-const test = (name: string) => {
-  return `Hello ${name}!`;
+const sum = (number1: number, number2: number) => {
+  return number1 + number2;
 };
-console.log(test("world"));
+console.log(sum(1, 2));
 ```
 
-- `test.js` file:
+`test.js` file:
 
 ```js
 var sum = function (number1, number2) {
@@ -58,5 +58,5 @@ console.log(sum(1, 2));
 - You can run a Javascript file `test.js` using a web browser or Node.Js. Result:
 
 ```js
-3
+3;
 ```
