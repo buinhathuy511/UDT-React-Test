@@ -52,7 +52,8 @@ tsc test.ts
 
 - Khi chạy dòng lệnh này, Typescript sẽ chuyển đổi thành mã Javascript tương đương đồng thời cũng loại bỏ các thông tin đặc trưng của Typescript như khai báo kiểu dữ liệu vì Javascript không hỗ trợ.
 - Kết quả:
-  `test.ts` file:
+
+`test.ts` file:
 
 ```ts
 const sum = (number1: number, number2: number) => {
