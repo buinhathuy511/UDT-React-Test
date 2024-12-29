@@ -1,13 +1,18 @@
-import path from "path";
-import nodeExternals from "webpack-node-externals";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+const path = require("path");
+const nodeExternals = require("webpack-node-externals");
+const htmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 const clientConfig = {
   mode: "development",
-  entry: "./src/client/index.tsx",
+  entry: [
+    "webpack-hot-middleware/client?reload=true", // Kích hoạt Hot Module Replacement (HMR) thông qua webpack-hot-middleware
+    "./src/client/index.tsx",
+  ],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "client.bundle.js",
+    publicPath: "/", // Đường dẫn tới thư mục chứa file bundle trên server
   },
   module: {
     rules: [
@@ -15,6 +20,10 @@ const clientConfig = {
         test: /\.(ts|tsx)$/, // Sử dụng babel-loader cho các file .ts hoặc .tsx
         exclude: /node_modules/, // Loại trừ thư mục node_modules
         use: "babel-loader",
+      },
+      {
+        test: /\.scss$/, // Thêm loader cho file .scss
+        use: ["style-loader", "css-loader", "sass-loader"], // Sử dụng các loader để xử lý file .scss
       },
     ],
   },
@@ -28,10 +37,11 @@ const clientConfig = {
     port: 3000, // Port mặc định cho webpack-dev-server
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    new htmlWebpackPlugin({
       template: "./public/index.html",
       filename: "index.html",
     }),
+    new webpack.HotModuleReplacementPlugin(), // Kích hoạt Hot Module Replacement (HMR)
   ],
 };
 
@@ -50,6 +60,10 @@ const serverConfig = {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: "babel-loader",
+      },
+      {
+        test: /\.scss$/, // Thêm loader cho file .scss
+        use: ["style-loader", "css-loader", "sass-loader"], // Sử dụng các loader để xử lý file .scss
       },
     ],
   },

@@ -1,9 +1,14 @@
 import React from "react";
+import CalculatorDisplay from "../components/CalculatorDisplay";
+import CalculatorButton from "../components/CalculatorButton";
+import CalculatorHeader from "../components/CalculatorHeader";
 
 const Calculator = () => {
   return (
-    <div>
-      <h1>Calculator</h1>
+    <div className="calculator">
+      <CalculatorHeader />
+      <CalculatorDisplay />
+      <CalculatorButton />
     </div>
   );
 };
