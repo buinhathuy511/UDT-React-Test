@@ -2,7 +2,7 @@ const initialState = {};
 
 interface IAction {
   type: string;
-  payload?: any;
+  payload?: string;
 }
 
 interface IState {
