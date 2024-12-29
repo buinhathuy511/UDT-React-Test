@@ -78,9 +78,13 @@ console.log(sum(1, 2));
 - Ví dụ, khi chạy file `test.js`:
 
 ```js
-3;
+3
 ```
 
-# Câu 2:
+# Câu 1: Setup SSR project using React and Webpack
 
 Video demo: https://www.loom.com/share/401e35e90663495299c06539a100ce3a?sid=48d28b62-8e6b-414b-b67e-4809c498de51
+
+# Câu 2: Setup project structure, state management, routing, standard tools, unit test in branch feature/environment
+
+Video demo: https://www.loom.com/share/d84c79b0ad0f47aa8cbebf29ae30417e?sid=cebdf52b-0684-45c2-a51f-174bc13fa61a
