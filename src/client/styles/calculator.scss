@@ -1,0 +1,142 @@
+$button-function: #675f64;
+$button-operator: #ed9f44;
+$button-number: #817d7d;
+
+$button-text-color: white;
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cbcbcb;
+  box-sizing: border-box;
+}
+
+.calculator {
+  background-color: #585050;
+  width: 445px;
+  height: 611px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+// Header
+.calculator-header {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  width: 100%;
+}
+
+.calculator-header button {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  border: none;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calculator-header button:active {
+  transform: scale(1.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-header .red {
+  background-color: #e86960;
+}
+
+.calculator-header .yellow {
+  background-color: #f0bc55;
+}
+
+.calculator-header .green {
+  background-color: #62c057;
+}
+
+// Display
+.calculator-display {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.calculator-display input {
+  color: $button-text-color;
+  width: 100%;
+  height: 100px;
+  font-size: 100px;
+  text-align: right;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  background-color: #585050;
+}
+
+.calculator-display input:focus {
+  outline: none;
+}
+
+// Buttons
+.calculator-button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  height: 100%;
+  width: 100%;
+  gap: 2px;
+  box-sizing: border-box;
+  padding: 1px;
+}
+
+.calculator-button-container button {
+  width: 100%;
+  height: 100%;
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.calculator-button-container button:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-function {
+  background-color: $button-function;
+  color: $button-text-color;
+}
+
+.button-operator {
+  background-color: $button-operator;
+  color: $button-text-color;
+}
+
+.button-number {
+  background-color: $button-number;
+  color: $button-text-color;
+}
+
+.calculator-button-container button:nth-child(17) {
+  border-bottom-left-radius: 20px;
+}
+
+.calculator-button-container button:nth-child(19) {
+  border-bottom-right-radius: 20px;
+}

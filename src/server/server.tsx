@@ -5,10 +5,23 @@ import fs from "fs";
 import path from "path";
 import { StaticRouter } from "react-router-dom";
 import App from "../client/App";
+import webpack from "webpack";
+import webpackDevMiddleware from "webpack-dev-middleware";
+import webpackHotMiddleware from "webpack-hot-middleware";
+const webpackConfig = require("../../webpack.config");
 
 const app = express();
+const compiler = webpack(webpackConfig[0]);
 
-app.use(express.static(path.resolve(__dirname, "../public")));
+app.use(
+  webpackDevMiddleware(compiler, {
+    publicPath: webpackConfig[0].output.publicPath,
+  })
+);
+
+app.use(webpackHotMiddleware(compiler));
+
+app.use(express.static(path.resolve(__dirname, "../dist")));
 
 app.get("*", (req, res) => {
   const content = ReactDOMServer.renderToString(
