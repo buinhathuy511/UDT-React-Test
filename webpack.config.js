@@ -1,6 +1,6 @@
-import path from "path";
-import nodeExternals from "webpack-node-externals";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+const path = require("path");
+const nodeExternals = require("webpack-node-externals");
+const htmlWebpackPlugin = require("html-webpack-plugin");
 
 const clientConfig = {
   mode: "development",
@@ -28,7 +28,7 @@ const clientConfig = {
     port: 3000, // Port mặc định cho webpack-dev-server
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    new htmlWebpackPlugin({
       template: "./public/index.html",
       filename: "index.html",
     }),
