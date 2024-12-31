@@ -7,7 +7,7 @@ const CalculatorDisplay = () => {
 
   return (
     <div className="calculator-display">
-      <input type="text" value={displayValue} readOnly />
+      <input type="text" value={displayValue} />
     </div>
   );
 };

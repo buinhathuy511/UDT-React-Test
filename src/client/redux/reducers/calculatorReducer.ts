@@ -48,6 +48,12 @@ const rootReducer = (state: IState = initialState, action: IAction): IState => {
           }
         }
         let result = eval(value || "");
+
+        // lưu vào localStorage
+        const history = JSON.parse(localStorage.getItem("history") || "[]");
+        history.push(value + " = " + result);
+        localStorage.setItem("history", JSON.stringify(history));
+
         return {
           ...state,
           displayValue: result.toString(),
