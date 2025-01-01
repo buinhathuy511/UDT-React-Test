@@ -47,16 +47,26 @@ const rootReducer = (state: IState = initialState, action: IAction): IState => {
             value = value.replace("%", "/100");
           }
         }
-        let result = eval(value || "");
+        let calculationResult = eval(value || "");
+
+        // Làm tròn tới 4 chữ số thập phân (use destrucuring assignment) 1.23456789
+        const [integerPart, decimalPart] = calculationResult
+          .toString()
+          .split(".");
+        if (decimalPart && decimalPart.length > 4) {
+          calculationResult = parseFloat(calculationResult.toFixed(4));
+        }
+        const finalResult = calculationResult;
+        console.log(finalResult); // number
 
         // lưu vào localStorage
         const history = JSON.parse(localStorage.getItem("history") || "[]");
-        history.push(value + " = " + result);
+        history.push(value + " = " + finalResult);
         localStorage.setItem("history", JSON.stringify(history));
 
         return {
           ...state,
-          displayValue: result.toString(),
+          displayValue: finalResult.toString(),
         };
       } catch (error) {
         return {

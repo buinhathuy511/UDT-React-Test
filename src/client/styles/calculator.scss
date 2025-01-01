@@ -149,12 +149,19 @@ html {
   border-radius: 20px;
 }
 
+.calculator-history ul {
+  padding: 10px 10px;
+  font-size: 20px;
+}
+
 .button-clear-history {
   background-color: #e86960;
   color: $button-text-color;
   cursor: pointer;
   border: none;
-  padding: 10px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-left: 12px;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 

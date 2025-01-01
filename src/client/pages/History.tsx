@@ -34,16 +34,12 @@ const History = () => {
   return (
     <div className="calculator-history">
       <h1 style={{ fontFamily: "monospace" }}>History</h1>
-      <ul style={{ padding: 20 }}>
+      <ul>
         {history.map((item: string, index: number) => (
           <li key={index}>{item}</li>
         ))}
       </ul>
-      <button
-        className="button-clear-history"
-        style={{ marginLeft: 20 }}
-        onClick={handleClearHistory}
-      >
+      <button className="button-clear-history" onClick={handleClearHistory}>
         Clear
       </button>
     </div>

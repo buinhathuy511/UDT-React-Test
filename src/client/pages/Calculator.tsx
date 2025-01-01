@@ -46,12 +46,14 @@ const Calculator = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [displayValue]);
 
   return (
     <div className="calculator">
       <CalculatorHeader />
-      <CalculatorDisplay />
+      <CalculatorDisplay 
+        displayValue={displayValue}
+      />
       <CalculatorButton
         handleButtonClick={handleButtonClick}
         handleClearDisplay={handleClearDisplay}
