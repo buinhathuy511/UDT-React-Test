@@ -140,3 +140,32 @@ html {
 .calculator-button-container button:nth-child(19) {
   border-bottom-right-radius: 20px;
 }
+
+// History
+.calculator-history {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+.calculator-history ul {
+  padding: 10px 10px;
+  font-size: 20px;
+}
+
+.button-clear-history {
+  background-color: #e86960;
+  color: $button-text-color;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-left: 12px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.button-clear-history:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
