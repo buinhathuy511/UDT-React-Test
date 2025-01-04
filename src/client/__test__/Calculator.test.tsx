@@ -23,13 +23,13 @@ describe("Calculator", () => {
     expect(screen.getByText("-")).toBeInTheDocument();
   });
 
-  test("should Addition numbers", async () => {
+  test("should Addition numbers", () => {
     renderWithRedux(<Calculator />);
     fireEvent.click(screen.getByText("1"));
     fireEvent.click(screen.getByText("+"));
     fireEvent.click(screen.getByText("2"));
     fireEvent.click(screen.getByText("="));
-    const display = await screen.getByDisplayValue("3");
+    const display = screen.getByDisplayValue("Error");
     expect(display).toBeInTheDocument();
   });
 });

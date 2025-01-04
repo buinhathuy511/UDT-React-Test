@@ -7,6 +7,7 @@ interface IProps {
   handleButtonClick: (event: Event) => void;
   handleClearDisplay: () => void;
   handleCalculateResult: () => void;
+  handleToggleSign: () => void;
   displayValue: string;
 }
 
@@ -17,7 +18,12 @@ const buttons = [
     key: "Backspace",
     action: "clear",
   },
-  { className: "button-function", label: "+/-", key: "+/-" },
+  {
+    className: "button-function",
+    label: "+/-",
+    key: "+/-",
+    action: "toggleSign",
+  },
   { className: "button-function", label: "%", key: "%" },
   { className: "button-operator", label: "÷", key: "/" },
 
@@ -55,6 +61,7 @@ const CalculatorButton = ({
   handleButtonClick,
   handleClearDisplay,
   handleCalculateResult,
+  handleToggleSign,
   displayValue,
 }: IProps) => {
   const handleAction = (button: (typeof buttons)[number], event: Event) => {
@@ -62,6 +69,8 @@ const CalculatorButton = ({
       handleClearDisplay();
     } else if (button.action === "calculate") {
       handleCalculateResult();
+    } else if (button.action === "toggleSign") {
+      handleToggleSign();
     } else {
       handleButtonClick(event);
     }

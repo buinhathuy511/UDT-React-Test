@@ -8,6 +8,7 @@ import {
   calculateResult,
   clearDisplay,
   removeLastCharacter,
+  toggleSign,
 } from "../redux/actions/calculatorAction";
 
 type Event = React.MouseEvent<HTMLButtonElement>;
@@ -33,6 +34,10 @@ const Calculator = () => {
     dispatch(calculateResult(displayValue));
   };
 
+  const handleToggleSign = () => {
+    dispatch(toggleSign());
+  };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       const button = document.querySelector<HTMLButtonElement>(
@@ -51,13 +56,12 @@ const Calculator = () => {
   return (
     <div className="calculator">
       <CalculatorHeader />
-      <CalculatorDisplay 
-        displayValue={displayValue}
-      />
+      <CalculatorDisplay displayValue={displayValue} />
       <CalculatorButton
         handleButtonClick={handleButtonClick}
         handleClearDisplay={handleClearDisplay}
         handleCalculateResult={handleCalculateResult}
+        handleToggleSign={handleToggleSign}
         displayValue={displayValue}
       />
     </div>

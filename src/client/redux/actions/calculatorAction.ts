@@ -23,3 +23,9 @@ export const calculateResult = (value: string) => {
     payload: value,
   };
 };
+
+export const toggleSign = () => {
+  return {
+    type: "TOGGLE_SIGN",
+  };
+}

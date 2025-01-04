@@ -74,6 +74,17 @@ const rootReducer = (state: IState = initialState, action: IAction): IState => {
           displayValue: "Error",
         };
       }
+    case "TOGGLE_SIGN":
+      let newValue: string;
+      if (state.displayValue[0] === "-") {
+        newValue = state.displayValue.slice(1);
+      } else {
+        newValue = "-" + state.displayValue;
+      }
+      return {
+        ...state,
+        displayValue: newValue,
+      };
     default:
       return state;
   }
