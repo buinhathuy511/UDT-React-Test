@@ -1,0 +1,54 @@
+@use "../variables/variables.scss" as *;
+
+.calculator-button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  height: 100%;
+  width: 100%;
+  gap: 2px;
+  box-sizing: border-box;
+  padding: 1px;
+}
+
+.calculator-button-container button {
+  width: 100%;
+  height: 100%;
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.calculator-button-container button:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-function {
+  background-color: $button-function;
+  color: $button-text-color;
+}
+
+.button-operator {
+  background-color: $button-operator;
+  color: $button-text-color;
+}
+
+.button-number {
+  background-color: $button-number;
+  color: $button-text-color;
+}
+
+.calculator-button-container button:nth-child(17) {
+  border-bottom-left-radius: 20px;
+}
+
+.calculator-button-container button:nth-child(19) {
+  border-bottom-right-radius: 20px;
+}

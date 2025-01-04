@@ -1,0 +1,59 @@
+@use "../variables/variables.scss" as *;
+
+.calculator-header {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  width: 100%;
+}
+
+.calculator-header button {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  border: none;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calculator-header button:active {
+  transform: scale(1.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-header .red {
+  background-color: #e86960;
+}
+
+.calculator-header .yellow {
+  background-color: #f0bc55;
+}
+
+.calculator-header .green {
+  background-color: #62c057;
+}
+
+.calculator-header .history {
+  background-color: transparent;
+  margin: 0;
+  margin-left: auto;
+  width: auto;
+  height: auto;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: $button-operator;
+  transition: all 0.3s ease;
+}
+
+.calculator-header .history:active {
+  transform: scale(1.2);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-header .history i {
+  font-size: 1.5rem;
+}
