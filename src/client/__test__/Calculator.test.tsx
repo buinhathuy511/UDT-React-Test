@@ -29,7 +29,7 @@ describe("Calculator", () => {
     fireEvent.click(screen.getByText("+"));
     fireEvent.click(screen.getByText("2"));
     fireEvent.click(screen.getByText("="));
-    const display = screen.getByDisplayValue("Error");
+    const display = screen.getByDisplayValue("3");
     expect(display).toBeInTheDocument();
   });
 });

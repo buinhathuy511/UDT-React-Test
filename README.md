@@ -88,3 +88,7 @@ Video demo: https://www.loom.com/share/401e35e90663495299c06539a100ce3a?sid=48d2
 # Câu 2: Setup project structure, state management, routing, standard tools, unit test in branch feature/environment
 
 Video demo: https://www.loom.com/share/d84c79b0ad0f47aa8cbebf29ae30417e?sid=cebdf52b-0684-45c2-a51f-174bc13fa61a
+
+# Câu 3, 4, 5, 6:
+
+Video demo: https://www.loom.com/share/bb0475db263a4153955e507732149733?sid=92b6f74b-6053-431c-9606-b105286d420a

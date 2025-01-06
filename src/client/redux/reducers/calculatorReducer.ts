@@ -49,7 +49,6 @@ const rootReducer = (state: IState = initialState, action: IAction): IState => {
         }
         let calculationResult = eval(value || "");
 
-        // Làm tròn tới 4 chữ số thập phân (use destrucuring assignment) 1.23456789
         const [integerPart, decimalPart] = calculationResult
           .toString()
           .split(".");
@@ -57,9 +56,7 @@ const rootReducer = (state: IState = initialState, action: IAction): IState => {
           calculationResult = parseFloat(calculationResult.toFixed(4));
         }
         const finalResult = calculationResult;
-        console.log(finalResult); // number
 
-        // lưu vào localStorage
         const history = JSON.parse(localStorage.getItem("history") || "[]");
         history.push(value + " = " + finalResult);
         localStorage.setItem("history", JSON.stringify(history));
